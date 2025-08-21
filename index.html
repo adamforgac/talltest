@@ -1,13 +1,612 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doprava a platba — TallGuys</title>
     <link rel="stylesheet" href="style.css" />
-    <title>Tall Guys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    
+    <header>
+      <div class="stripe full-width-container">
+        <span>Dopravu i dárek máte ZDARMA!</span>
+      </div>
+
+      <div class="full-width-container logo-panel">
+        <div class="regular-container">
+          <form class="searchbar" role="search" aria-label="Hledat">
+            <label class="visually-hidden" for="search-header">Hledat</label>
+            <input
+              id="search-header"
+              name="search-header"
+              type="search"
+              placeholder="Mikiny"
+            />
+            <button type="submit">Hledat</button>
+          </form>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 830 107"
+            fill="none"
+            class="main-logo"
+          >
+            <path
+              d="M538.08 21.0023C538.08 27.1747 538.08 33.3471 538.08 39.5195C538.08 49.3042 538.08 59.0833 538.08 68.868C538.08 73.5381 539.412 77.0097 542.135 80.8246C551.482 93.9065 573.006 93.3944 581.111 79.3447C584.523 73.4312 584.393 66.516 584.393 59.916V38.6924C584.393 37.6571 584.393 21.0023 584.393 21.0023H600.207V63.8434C600.207 68.7442 600.252 73.3243 598.659 78C597.338 81.888 595.643 85.8491 593.322 89.2532C577.276 112.812 541.954 111.4 527.456 87.0026C525.191 83.1934 523.48 79.0465 522.717 74.669C521.881 69.8695 522.26 64.8562 522.26 60.006V32.2555C522.26 31.6366 522.26 20.9966 522.26 20.9966H538.074L538.08 21.0023Z"
+              fill="black"
+            />
+            <path
+              d="M811.965 28.9246C812.813 30.1118 805.544 40.054 804.38 41.8095C795.038 35.7609 781.726 32.565 770.769 35.3445C765.279 36.7343 760.58 40.5717 764.082 46.519C767.799 52.8321 791.418 57.6935 799.229 61.5815C822.442 73.1498 817.574 98.6778 793.372 104.563C777.281 108.474 759.835 105.013 745.399 97.4794C746.088 96.2753 751.815 86.3161 753.04 84.6282C763.997 89.9453 776.491 93.9346 788.758 90.9637C799.263 88.4205 801.127 79.7893 791.486 74.3596C778.705 67.1687 753.543 66.6511 747.912 50.2495C742.914 35.6878 753.125 24.9972 766.708 21.7337C782.229 18.0033 798.184 21.5312 811.965 28.9246Z"
+              fill="black"
+            />
+            <path
+              d="M648.497 21.0023L672.506 57.0127L697.634 21.0023H715.425L680.973 72.4859V105.964H664.594V71.9232L630.706 21.0023H648.497Z"
+              fill="black"
+            />
+            <path
+              d="M490.637 55.3247C490.637 60.9738 491.128 66.7749 489.665 72.289C488.4 77.0491 486.503 81.8598 483.955 86.0854C462.86 121.139 408.493 107.287 403.088 68.2659L418.936 66.2516C424.115 93.5126 464.555 99.5725 472.563 71.0792H450.536V55.3247H490.637Z"
+              fill="black"
+            />
+            <path
+              d="M373.159 105.964H312.726V21.0023H329.106V90.7724H373.171"
+              fill="black"
+            />
+            <path
+              d="M238.174 21.0023V90.7724H281.663V105.964H221.795V21.0023H238.174Z"
+              fill="black"
+            />
+            <path
+              d="M419.473 55.3247L403.094 53.074C409.736 13.6595 460.127 2.15307 484.385 33.7409C484.531 34.4443 483.955 34.6806 483.577 35.0745C482.848 35.8397 471.959 43.5988 471.219 43.4694C456.263 23.5005 423.33 30.3706 419.467 55.3303L419.473 55.3247Z"
+              fill="black"
+            />
+            <path
+              d="M80.5959 15.3756H0.39502V31.6929H80.5959V15.3756Z"
+              fill="black"
+            />
+            <path
+              d="M48.9674 41.2581V105.964H32.0235V47.1661C37.3947 44.5722 43.1726 42.6929 48.9674 41.2581Z"
+              fill="black"
+            />
+            <path
+              d="M156.583 20.9629L136.222 21.5593L102.058 105.964H119.002L125.836 87.4527L167.512 87.464L174.352 105.964H191.296L156.583 20.9629ZM132.557 72.0414L146.4 36.588L161.356 71.7713L132.557 72.0414Z"
+              fill="black"
+            />
+            <path
+              d="M826.859 11.5329C826.859 6.51434 822.775 2.44577 817.738 2.44566C812.7 2.44566 808.616 6.51427 808.616 11.5329C808.616 16.5514 812.7 20.6196 817.738 20.6196C822.775 20.6194 826.859 16.5513 826.859 11.5329ZM829.118 11.5329C829.118 17.7943 824.023 22.8701 817.738 22.8702C811.453 22.8702 806.357 17.7944 806.357 11.5329C806.357 5.27127 811.453 0.195007 817.738 0.195007C824.023 0.195119 829.118 5.27133 829.118 11.5329Z"
+              fill="black"
+            />
+            <path
+              d="M813.711 16.4616V6.38429H818.031C819.438 6.38429 820.533 6.71063 821.313 7.3577C822.092 8.00476 822.482 8.89939 822.482 10.0416C822.482 10.7899 822.301 11.437 821.945 11.9772C821.589 12.5173 821.081 12.9337 820.426 13.2206C819.771 13.5076 818.991 13.6539 818.082 13.6539H815.004L816.043 12.6298V16.4616H813.699H813.711ZM816.055 12.8887L815.015 11.7971H817.964C818.686 11.7971 819.229 11.6396 819.584 11.3301C819.94 11.0206 820.121 10.5874 820.121 10.0416C820.121 9.49581 819.94 9.05131 819.584 8.74747C819.229 8.43801 818.686 8.28609 817.964 8.28609H815.015L816.055 7.17764V12.8943V12.8887ZM820.144 16.4616L817.613 12.8043H820.115L822.674 16.4616H820.144Z"
+              fill="black"
+            />
+          </svg>
+
+          <div class="icon-box">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 38 38"
+              fill="none"
+            >
+              <circle cx="19" cy="19" r="19" fill="#EAECEF" />
+              <path
+                d="M19.3398 9C22.5155 9 25.0898 11.5744 25.0898 14.75C25.0898 17.25 23.4939 19.3759 21.2656 20.168C25.4055 20.8934 28.6797 23.9091 28.6797 27.75C28.6797 28.1641 28.3438 28.4999 27.9297 28.5C27.5156 28.4998 27.1797 28.1641 27.1797 27.75C27.1797 24.4309 23.8168 21.5001 19.3398 21.5C14.8628 21.5001 11.5 24.4309 11.5 27.75C11.5 28.1641 11.1641 28.4999 10.75 28.5C10.3358 28.5 10 28.1642 10 27.75C10 23.9093 13.2735 20.8936 17.4131 20.168C15.1853 19.3757 13.5898 17.2497 13.5898 14.75C13.5898 11.5744 16.1642 9 19.3398 9ZM19.3398 10.5C16.9926 10.5 15.0898 12.4028 15.0898 14.75C15.0898 17.0972 16.9926 19 19.3398 19C21.687 19 23.5898 17.0972 23.5898 14.75C23.5898 12.4028 21.687 10.5 19.3398 10.5Z"
+                fill="black"
+              />
+            </svg>
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 38 38"
+              fill="none"
+            >
+              <circle cx="19" cy="19" r="19" fill="black" />
+              <path
+                d="M20.7691 8C21.7276 8 22.5643 8.38016 23.1509 9.06445C23.7285 9.7384 24.0191 10.6531 24.0191 11.667V13.5684C25.1987 13.7192 26.0438 14.1242 26.6167 14.8047C27.3203 15.6406 27.472 16.7502 27.5835 17.6904L28.4839 25.1904V25.1924C28.6371 26.492 28.538 27.8425 27.7808 28.8799C26.9971 29.9532 25.6558 30.5 23.7691 30.5H14.7788C12.8882 30.4999 11.5433 29.9539 10.7593 28.8799C10.0015 27.8416 9.9066 26.4903 10.065 25.1904L10.9644 17.6914C11.0711 16.7506 11.2201 15.641 11.9224 14.8047C12.4944 14.1238 13.3398 13.7191 14.5191 13.5684V11.667C14.5191 10.6532 14.8097 9.73839 15.3872 9.06445C15.9738 8.38015 16.8105 8.00004 17.7691 8H20.7691ZM16.0191 15.75C16.0191 16.1642 15.6833 16.5 15.2691 16.5C14.8549 16.4999 14.5191 16.1642 14.5191 15.75V15.083C13.7181 15.2148 13.3085 15.4867 13.0708 15.7695C12.6993 16.212 12.5678 16.8662 12.4546 17.8643L12.4536 17.8691L11.5542 25.3691L11.5533 25.3711C11.4119 26.5305 11.547 27.4138 11.9712 27.9951C12.3696 28.5409 13.16 28.9999 14.7788 29H23.7691C25.3821 29 26.171 28.5415 26.5699 27.9951C26.9948 27.4128 27.1312 26.5286 26.9947 25.3691L26.0943 17.8691V17.8682C25.9758 16.8689 25.8426 16.2141 25.4693 15.7705C25.2306 15.487 24.8205 15.2149 24.0191 15.083V15.75C24.0191 16.1642 23.6833 16.5 23.2691 16.5C22.8549 16.4999 22.5191 16.1642 22.5191 15.75V15H16.0191V15.75ZM17.7691 9.5C17.2278 9.50004 16.8143 9.7036 16.5259 10.04C16.2286 10.3869 16.0191 10.931 16.0191 11.667V13.5H22.5191V11.667C22.5191 10.9309 22.3095 10.3869 22.0122 10.04C21.7238 9.70361 21.3104 9.5 20.7691 9.5H17.7691Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Bestsellers</a></li>
+          <li><a href="#">Novinky</a></li>
+          <li class="has-sub">
+            <a href="#">
+              Muži
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 18 9"
+                fill="none"
+              >
+                <path
+                  d="M16.9201 0.949951L10.4001 7.47C9.6301 8.24 8.3701 8.24 7.6001 7.47L1.08008 0.949951"
+                  stroke="black"
+                  stroke-width="1.5"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </li>
+          <li class="has-sub">
+            <a href="#">
+              Ženy
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 18 9"
+                fill="none"
+              >
+                <path
+                  d="M16.0595 0.219669C16.3524 -0.0731965 16.8272 -0.0731371 17.1201 0.219669C17.413 0.512561 17.413 0.987322 17.1201 1.28022L10.6005 7.80072C9.53763 8.86353 7.80207 8.86359 6.7392 7.80072L0.219669 1.28022C-0.0732228 0.987323 -0.0732234 0.512562 0.219669 0.219669C0.512563 -0.0732228 0.987324 -0.0732234 1.28022 0.219669L7.80072 6.7392C8.27783 7.21631 9.06288 7.21631 9.53998 6.7392L16.0595 0.219669Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          </li>
+
+          <li class="has-sub">
+            <a href="#">
+              Doplňky
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 18 9"
+                fill="none"
+              >
+                <path
+                  d="M16.0595 0.219669C16.3524 -0.0731965 16.8272 -0.0731371 17.1201 0.219669C17.413 0.512561 17.413 0.987322 17.1201 1.28022L10.6005 7.80072C9.53763 8.86353 7.80207 8.86359 6.7392 7.80072L0.219669 1.28022C-0.0732228 0.987323 -0.0732234 0.512562 0.219669 0.219669C0.512563 -0.0732228 0.987324 -0.0732234 1.28022 0.219669L7.80072 6.7392C8.27783 7.21631 9.06288 7.21631 9.53998 6.7392L16.0595 0.219669Z"
+                  fill="black"
+                />
+              </svg>
+            </a>
+          </li>
+          <li><a href="#">Letní výprodej</a></li>
+          <li><a href="#">O značce</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="regular-container regular-grid shipping-payment">
+        <div>
+          <h1>Doprava a platba</h1>
+
+          <p class="main-paragraph">
+            Objednávky vytvořené v pracovní den do 11:00 obvykle
+            <strong
+              >expedujeme stejný den z našeho skladu ve Zlíně.<br
+            /></strong>
+            V případě platby bankovním převodem se expedice provádí až po
+            připsání částky na náš účet.
+          </p>
+
+          <div class="review-box">
+            <div class="review-name">
+              <span>Honza</span>
+              <div class="stars">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.51125 0.325384C4.71146 -0.108461 5.35466 -0.108462 5.55487 0.325383L6.6022 2.59493C6.68297 2.76996 6.85358 2.89175 7.0519 2.91594L9.56711 3.22271C10.0404 3.28044 10.2349 3.83557 9.89374 4.15474L8.00044 5.92593C7.86429 6.0533 7.80351 6.23728 7.8384 6.41641L8.32978 8.93934C8.41933 9.39915 7.90278 9.74682 7.48096 9.51065L5.32109 8.30135C5.14317 8.20174 4.92294 8.20174 4.74502 8.30135L2.58515 9.51065C2.16334 9.74682 1.64679 9.39915 1.73634 8.93934L2.22772 6.41641C2.26261 6.23728 2.20182 6.0533 2.06567 5.92593L0.172381 4.15474C-0.168788 3.83557 0.0257568 3.28044 0.499003 3.22272L3.01422 2.91594C3.21254 2.89175 3.38315 2.76996 3.46392 2.59493L4.51125 0.325384Z"
+                    fill="#E7C520"
+                  />
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.51125 0.325384C4.71146 -0.108461 5.35466 -0.108462 5.55487 0.325383L6.6022 2.59493C6.68297 2.76996 6.85358 2.89175 7.0519 2.91594L9.56711 3.22271C10.0404 3.28044 10.2349 3.83557 9.89374 4.15474L8.00044 5.92593C7.86429 6.0533 7.80351 6.23728 7.8384 6.41641L8.32978 8.93934C8.41933 9.39915 7.90278 9.74682 7.48096 9.51065L5.32109 8.30135C5.14317 8.20174 4.92294 8.20174 4.74502 8.30135L2.58515 9.51065C2.16334 9.74682 1.64679 9.39915 1.73634 8.93934L2.22772 6.41641C2.26261 6.23728 2.20182 6.0533 2.06567 5.92593L0.172381 4.15474C-0.168788 3.83557 0.0257568 3.28044 0.499003 3.22272L3.01422 2.91594C3.21254 2.89175 3.38315 2.76996 3.46392 2.59493L4.51125 0.325384Z"
+                    fill="#E7C520"
+                  />
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.51125 0.325384C4.71146 -0.108461 5.35466 -0.108462 5.55487 0.325383L6.6022 2.59493C6.68297 2.76996 6.85358 2.89175 7.0519 2.91594L9.56711 3.22271C10.0404 3.28044 10.2349 3.83557 9.89374 4.15474L8.00044 5.92593C7.86429 6.0533 7.80351 6.23728 7.8384 6.41641L8.32978 8.93934C8.41933 9.39915 7.90278 9.74682 7.48096 9.51065L5.32109 8.30135C5.14317 8.20174 4.92294 8.20174 4.74502 8.30135L2.58515 9.51065C2.16334 9.74682 1.64679 9.39915 1.73634 8.93934L2.22772 6.41641C2.26261 6.23728 2.20182 6.0533 2.06567 5.92593L0.172381 4.15474C-0.168788 3.83557 0.0257568 3.28044 0.499003 3.22272L3.01422 2.91594C3.21254 2.89175 3.38315 2.76996 3.46392 2.59493L4.51125 0.325384Z"
+                    fill="#E7C520"
+                  />
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.51125 0.325384C4.71146 -0.108461 5.35466 -0.108462 5.55487 0.325383L6.6022 2.59493C6.68297 2.76996 6.85358 2.89175 7.0519 2.91594L9.56711 3.22271C10.0404 3.28044 10.2349 3.83557 9.89374 4.15474L8.00044 5.92593C7.86429 6.0533 7.80351 6.23728 7.8384 6.41641L8.32978 8.93934C8.41933 9.39915 7.90278 9.74682 7.48096 9.51065L5.32109 8.30135C5.14317 8.20174 4.92294 8.20174 4.74502 8.30135L2.58515 9.51065C2.16334 9.74682 1.64679 9.39915 1.73634 8.93934L2.22772 6.41641C2.26261 6.23728 2.20182 6.0533 2.06567 5.92593L0.172381 4.15474C-0.168788 3.83557 0.0257568 3.28044 0.499003 3.22272L3.01422 2.91594C3.21254 2.89175 3.38315 2.76996 3.46392 2.59493L4.51125 0.325384Z"
+                    fill="#E7C520"
+                  />
+                </svg>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 11 10"
+                  fill="none"
+                >
+                  <path
+                    d="M4.51125 0.325384C4.71146 -0.108461 5.35466 -0.108462 5.55487 0.325383L6.6022 2.59493C6.68297 2.76996 6.85358 2.89175 7.0519 2.91594L9.56711 3.22271C10.0404 3.28044 10.2349 3.83557 9.89374 4.15474L8.00044 5.92593C7.86429 6.0533 7.80351 6.23728 7.8384 6.41641L8.32978 8.93934C8.41933 9.39915 7.90278 9.74682 7.48096 9.51065L5.32109 8.30135C5.14317 8.20174 4.92294 8.20174 4.74502 8.30135L2.58515 9.51065C2.16334 9.74682 1.64679 9.39915 1.73634 8.93934L2.22772 6.41641C2.26261 6.23728 2.20182 6.0533 2.06567 5.92593L0.172381 4.15474C-0.168788 3.83557 0.0257568 3.28044 0.499003 3.22272L3.01422 2.91594C3.21254 2.89175 3.38315 2.76996 3.46392 2.59493L4.51125 0.325384Z"
+                    fill="#E7C520"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <p>Velmi rychlé doručení, pohodlné a délka odpovídá.</p>
+          </div>
+        </div>
+
+        <img
+          src="raster/img-1.png"
+          alt="Kurýr předávající černou zásilku s logem TallGuys spokojené zákaznici."
+        />
+      </section>
+
+      <section class="regular-container regular-grid options-table">
+        <div class="delivery-options">
+          <h2>Možnosti doručení</h2>
+
+          <ul>
+            <li>
+              <img
+                src="raster/loga-ikonky/zasilkovna.png"
+                alt="Logo přepravce Zásilkovna"
+              />
+
+              <div>
+                <span class="delivery-name">Zásilkovna</span>
+
+                <span class="delivery-info">Zvolte odběrné místo</span>
+              </div>
+
+              <span> 80&nbsp;Kč </span>
+            </li>
+
+            <li>
+              <img src="raster/loga-ikonky/ppl.png" alt="Logo přepravce PPL" />
+
+              <div>
+                <span class="delivery-name">PPL</span>
+              </div>
+
+              <span> 100&nbsp;Kč </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/ppl-parcelbox.png"
+                alt="Logo přepravce PPL Parcelbox"
+              />
+
+              <div>
+                <span class="delivery-name">PPL</span>
+
+                <span class="delivery-info">Zvolte odběrné místo</span>
+              </div>
+
+              <span> 80&nbsp;Kč </span>
+            </li>
+
+            <li>
+              <img src="raster/loga-ikonky/dpd.png" alt="Logo přepravce DPD" />
+
+              <div>
+                <span class="delivery-name">DPD</span>
+
+                <span class="delivery-info">Do zahraničí se cena liší</span>
+              </div>
+
+              <span> 110&nbsp;Kč </span>
+            </li>
+          </ul>
+
+          <span class="benefit-note"
+            >Doprava <strong>ZDARMA</strong> na výdejní místo při objednávce nad
+            3&nbsp;000&nbsp;Kč.</span
+          >
+
+          <span class="benefit-note"
+            >Doprava <strong>ZDARMA</strong> na adresu při objednávce nad
+            3&nbsp;500&nbsp;Kč.<br />Platí pouze v ČR.</span
+          >
+        </div>
+
+        <div class="payment-options">
+          <h2>Možnosti platby</h2>
+
+          <ul>
+            <li>
+              <img src="raster/loga-ikonky/qr-png.png" alt="Ikonka QR kód" />
+
+              <div>
+                <span class="delivery-name">Bankovní převod / QR kód</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img src="raster/loga-ikonky/card-icon.png" alt="Platba kartou" />
+
+              <div>
+                <span class="delivery-name">On-line platba kartou</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/apple-icon.png"
+                alt="Logo platební metody Apple Pay"
+              />
+
+              <div>
+                <span class="delivery-name">Apple Pay</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/google-icon.png"
+                alt="Logo platební metody Google Pay"
+              />
+
+              <div>
+                <span class="delivery-name">Google Pay</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/skip-pay.png"
+                alt="Logo platební metody Skip Pay"
+              />
+
+              <div>
+                <span class="delivery-name">Skip Pay</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/twisto.png"
+                alt="Logo platební metody Twisto"
+              />
+
+              <div>
+                <span class="delivery-name">Twisto</span>
+              </div>
+
+              <span class="free"> ZDARMA </span>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/dobirka.png"
+                alt="Platba na dobírku"
+              />
+
+              <div>
+                <span class="delivery-name">Bankovní převod / QR kód</span>
+              </div>
+
+              <span> 70&nbsp;Kč</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="delivery-country">
+          <h2>Kam doručujeme</h2>
+
+          <ul>
+            <li>
+              <img
+                src="raster/loga-ikonky/cesko.png"
+                alt="Vlajka České republiky"
+              />
+
+              <div>
+                <span class="delivery-name">Česko</span>
+              </div>
+            </li>
+
+            <li>
+              <img
+                src="raster/loga-ikonky/slovensko.png"
+                alt="Vlajka Slovenské republiky"
+              />
+
+              <div>
+                <span class="delivery-name">Slovensko</span>
+              </div>
+            </li>
+
+            <li>
+              <img src="raster/loga-ikonky/svet.png" alt="Planeta" />
+
+              <div>
+                <span id="current-country" class="delivery-name">24 států</span>
+              </div>
+
+              <div class="country-picker">
+                <select id="dest-country">
+                  <option value="" selected disabled>Vyberte</option>
+                  <option>Polsko</option>
+                  <option>Rakousko</option>
+                  <option value="__reset">Zrušit</option>
+                </select>
+
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 8 9"
+                    fill="none"
+                  >
+                    <path
+                      d="M3.50002 1C3.50002 0.723858 3.72388 0.5 4.00002 0.5C4.27617 0.5 4.50002 0.723858 4.50002 1V6.79297L6.64651 4.64648C6.84177 4.45122 7.15828 4.45122 7.35354 4.64648C7.5488 4.84175 7.5488 5.15825 7.35354 5.35352L4.35354 8.35352C4.15828 8.54878 3.84177 8.54878 3.64651 8.35352L0.646508 5.35352C0.451246 5.15825 0.451246 4.84175 0.646508 4.64648C0.84177 4.45122 1.15828 4.45122 1.35354 4.64648L3.50002 6.79297V1Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="faq-delivery-payment">
+          <h2>FAQ - DOPRAVA A PLATBA</h2>
+
+          <ul>
+            <li>
+              <p>Co když byl můj výběr v předprodeji?</p>
+
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                >
+                  <path
+                    d="M13.522 7.40001H7.94205V12.86H6.05205V7.40001H0.472046V5.63002H6.05205V0.140015H7.94205V5.63002H13.522V7.40001Z"
+                    fill="black"
+                  />
+                </svg>
+              </span>
+
+              <div data-answer class="faq-answer">
+                <p>
+                  Pokud je položka v předprodeji, expedujeme ji v okamžiku, kdy
+                  dorazí na sklad. Termín je vždy uveden u produktu; pokud
+                  objednávka obsahuje i dostupné položky, můžeme je poslat
+                  zvlášť po domluvě.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <p>Jak dlouho trvá dodání zboží?</p>
+
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                >
+                  <path
+                    d="M13.522 7.40001H7.94205V12.86H6.05205V7.40001H0.472046V5.63002H6.05205V0.140015H7.94205V5.63002H13.522V7.40001Z"
+                    fill="black"
+                  />
+                </svg>
+              </span>
+
+              <div data-answer class="faq-answer">
+                <p>
+                  Pokud je položka v předprodeji, expedujeme ji v okamžiku, kdy
+                  dorazí na sklad. Termín je vždy uveden u produktu; pokud
+                  objednávka obsahuje i dostupné položky, můžeme je poslat
+                  zvlášť po domluvě.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <p>Co když mi oblečení nesedí?</p>
+
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                >
+                  <path
+                    d="M13.522 7.40001H7.94205V12.86H6.05205V7.40001H0.472046V5.63002H6.05205V0.140015H7.94205V5.63002H13.522V7.40001Z"
+                    fill="black"
+                  />
+                </svg>
+              </span>
+
+              <div data-answer class="faq-answer">
+                <p>
+                  Pokud je položka v předprodeji, expedujeme ji v okamžiku, kdy
+                  dorazí na sklad. Termín je vždy uveden u produktu; pokud
+                  objednávka obsahuje i dostupné položky, můžeme je poslat
+                  zvlášť po domluvě.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <p>Co když byl můj výběr v předprodeji?</p>
+
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 14 13"
+                  fill="none"
+                >
+                  <path
+                    d="M13.522 7.40001H7.94205V12.86H6.05205V7.40001H0.472046V5.63002H6.05205V0.140015H7.94205V5.63002H13.522V7.40001Z"
+                    fill="black"
+                  />
+                </svg>
+              </span>
+
+              <div data-answer class="faq-answer">
+                <p>
+                  Pokud je položka v předprodeji, expedujeme ji v okamžiku, kdy
+                  dorazí na sklad. Termín je vždy uveden u produktu; pokud
+                  objednávka obsahuje i dostupné položky, můžeme je poslat
+                  zvlášť po domluvě.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="regular-container regular-grid photos">
+        <img
+          src="raster/img-2.png"
+          alt="TallGuys trička v různých barevných kombinacích, ležící na stole"
+        />
+        <img
+          src="raster/img-3.png"
+          alt="Kurýr předávající TallGuys zásilku klientovi"
+        />
+        <img
+          src="raster/img-4.png"
+          alt="Kurýr předávající TallGuys zásilku usmívající se klientce u dveří domu"
+        />
+      </section>
+    </main>
+
+    <footer></footer>
   </body>
+
   <script src="script.js"></script>
 </html>
