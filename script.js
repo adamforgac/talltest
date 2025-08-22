@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // FAQ DROPDOWN
 
 document.addEventListener('DOMContentLoaded', () => {
-  const faqItems = Array.from(document.querySelectorAll('li')).filter((li) => {
+  const faqItems = Array.from(
+    document.querySelectorAll('.faq-delivery-payment ul > li')
+  ).filter((li) => {
     const q = li.querySelector(':scope > p');
     const icon = li.querySelector(':scope > span svg');
     const ans = li.querySelector(':scope > div[data-answer]');
